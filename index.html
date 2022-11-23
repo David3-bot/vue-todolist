@@ -22,8 +22,14 @@
 
         </div>
         <div>
+            
             <ul v-for="(todoTask, index) in todoTask" class="card-img">
-                <li class=>{{todoTask.text}}</li>
+
+             
+
+                <span v-bind:class="todoTask.done === true ? 'text-decoration-line-through' : ''"><li class=>{{todoTask.text}}</li></span>
+                <input class="form-check-input" type="checkbox" role="switch" v-model="todoTask.done">
+                
 
 
                 <button @click="removeTask(index)">(-)</button>
